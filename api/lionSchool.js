@@ -1,41 +1,56 @@
-const apiURL = "https://lion-school-phbo.onrender.com/"
+/*****************************************************************************
+ * Object     : Arquivo responsável pela comunicação com a API da Lion School
+ * Date       : 2026-07-23
+ * Development: Lucas Alexandre da Silva
+ * Version    : 1.0
+ *****************************************************************************/
 
-export async function getCursos(){
+// ---| URL Base da API |---
+const apiURL = 'https://lion-school-phbo.onrender.com/'
 
-    const response = await fetch(apiURL)
+// ---| Função de requisição |---
 
-    if(!response.ok) throw new Error("Erro ao listar todos os Cursos")
-    return response.json()
+// Função responsável por realiza uma requisição para a API utilizando o endpoint informado
+const request = async function(endpoint){
+
+    // Realiza a requisição para o endpoint informado
+    const response = await fetch(`${apiURL}${endpoint}`)
+
+    // Verifica se a API retornou uma resposta de sucesso
+    if(!response.ok){
+        throw new Error(`Erro ao acessar o endpoint: ${endpoint}`)
+    }
+
+    // Converte a resposta da API para o formato JSON
+    const data = await response.json()
+
+    // Retorna os dados obtidos da API
+    return data
 }
 
-export async function getAlunos(id){
+// ---| Funções da API |---
 
-    const response = await fetch(`${apiURL}/${id}`)
-
-    if(!response.ok) throw new Error("Erro ao listar tosos os Alunos")
-    return response
-} 
-
-export async function getAlunoCurso(id, materia){
-
-    const response = await fetch(`${apiURL}/alunos${id}?curso_id=${materia}`)
-
-    if(!response.ok) throw new Error("Erro ao filtro alunos pelo curso")
-    return response
+// Função responsável por solicitar à API a lista de todos os cursos cadastrados
+export const getCursos = async function(){
+    return await request('cursos')
 }
 
-export async function getAlunoStatus(id, statusCurso){
-
-    const response = await fetch(`${apiURL}/alunos${id}?status=${statusCurso}`)
-
-    if(!response.ok) throw new Error("Errro ao filtrar alunos pelo status (cursando/finalizado)")
-    return response
+// Função responsável por solicitar à API a lista de todos os alunos cadastrados
+export const getAlunos = async function(){
+    return await request('alunos')
 }
 
-export async function getInfoAluno(id){
+// Função responsável por solicitar à API a lista de alunos pertencentes a um curso
+export const getAlunoCurso = async function(idCurso){
+    return await request(`alunos?curso_id=${idCurso}`)
+}
 
-    const response = await fetch(`${apiURL}/alunos/${id}`)
+// Função responsável por solicitar à API a lista de alunos conforme o status informado
+export const getAlunoStatus = async function(status){
+    return await request(`alunos?status=${status}`)
+}
 
-    if(!response.ok) throw new Error("Erro ao buscar detallhes de um aluno")
-    return response
+ // Função responsável por solicitar à API os dados de um aluno específico
+export const getAluno = async function(id){
+    return await request(`alunos/${id}`)
 }

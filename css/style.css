@@ -4,25 +4,60 @@
     --cor-texto: white;
 }
 
-.container-header{
-    background-color: var(--cor-principal);
-    display: flex;
-    justify-content: space-between;
-    height: auto;
+/* Garante que a página ocupe toda a altura da tela e evita scroll horizontal */
+html, body {
+    height: 100vh;
     width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
 }
 
-.span-cor{
-    color: var(--cor-texto);
-    font-size: 30px;
+/* Configura o body como Flexbox para empilhar header, main e footer  */
+body {
     display: flex;
     flex-direction: column;
 }
 
+.container-header{
+    background-color: var(--cor-principal);
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    padding: 15px;
+}
+
+.container-logo{
+    margin-left: 90px;
+}
+
+.container-sair{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 90px;
+}
+
+.container-sair img{
+    height: 40px;
+    width: 40px;
+}
+
+.container-sair span{
+    color: var(--cor-texto);
+    font-size: 20px;
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - 100px - 100px); /* 100vh total - altura do header - altura do footer */
+}
+
 .container-footer{
     background-color: var(--cor-principal);
-    height: 150px;
-    width: 100vw;
+    height: 100px; 
+    width: 100%;
     display: flex;
     justify-content: space-around;  
     align-items: center;
@@ -30,14 +65,14 @@
 }
 
 .container-footer h3{
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .container-icons{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .container-icons p{
@@ -45,8 +80,12 @@
 }
 
 .info{
-    color: var(--cor-texto);
     display: flex;
+}
+
+.info img{
+    height: 15px;
+    width: auto;
 }
 
 .container-redes{
@@ -61,8 +100,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: solid white;
-    height: 60px;
-    width: 60px;
+    border: 2px solid white;
+    height: 40px;
+    width: 40px;
 }
-
