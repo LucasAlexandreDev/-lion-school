@@ -1,0 +1,116 @@
+/*****************************************************************************
+ * Objective   : Estilização da Tela de Cursos (Home)
+ * Date        : 2026-07-23
+ * Development : Lucas Alexandre da Silva
+ * Version     : 1.0
+ * Screen      : 01 - root 
+ ****************************************************************************/
+
+ /*Criação da parte Principal da Tela Curso   */
+
+ .container-curso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+/* ---| Crição da parte da esquerda da tela (texto core + img dos equipamentos) |---*/
+
+.container-apresentacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    width: 30%; 
+}
+
+.texto-apresentacao {
+    font-size: 42px;
+    font-weight: 300;
+    color: #353535;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.span-curso {
+    color: var(--cor-principal);
+    font-weight: bold;
+}
+
+.container-equipamentos {
+    display: flex;
+    align-items: center;
+}
+
+.container-equipamentos img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+}
+
+/* ---| Crição da parte da central da tela (img da estudante) |--- */
+
+.container-ilustracao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%; 
+    height: 100%; 
+}
+
+.container-ilustracao img {
+    max-height: 85%; 
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+}
+
+/* ---| Crição da parte da direita da tela (dois botões do curso) |--- */
+
+.container-botao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 30%; 
+}
+
+.btn-curso {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    width: 300px;
+    height: 115px;
+    padding-left: 35px;
+    background-color: var(--cor-principal);
+    border: 1px solid #222222;
+    border-radius: 0px;
+    box-shadow: 6px 6px 6px rgba(25, 35, 100, 0.35); 
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-curso:hover {
+    transform: scale(1.02);
+    background-color: #273890;
+}
+
+.btn-curso img {
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.btn-curso span {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--cor-texto);
+    letter-spacing: 1px;
+}
