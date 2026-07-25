@@ -10,11 +10,12 @@
 
 // ---| Import dos métodos de requisição |---
 import { getCursos } from "../api/lionSchool.js"
+import { inicializarAlunos } from "./screens/TelaAlunosCurso.js"
 
 // ---| Funções da Interface |---
 
 // Função responsável por inicializar a busca dos cursos na API e chama a montagem da tela.
-const inicializarCursos = async function () {
+export const inicializarCursos = async function () {
     
     // Seleciona a tag <main id="root"> e limpa o conteúdo dela
     let result = document.getElementById('root')
@@ -125,6 +126,13 @@ const criarTelaCursos = async function (listaCursos) {
 
         // Adição do btnCurso dentro da divAcaoBtn
         divAcoesBtn.append(btnCurso)
+
+        // ---| ADICIONANDO O EVENTO DE CLIQUE PARA A TELA 2 |---
+        btnCurso.addEventListener('click', () => {
+
+            // Passamos a sigla do curso (DS ou REDES) para a próxima tela
+            inicializarAlunos(itemCurso.sigla)
+        })
 
     })
 
