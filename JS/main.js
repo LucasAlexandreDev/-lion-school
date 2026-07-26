@@ -10,7 +10,7 @@
 
 // ---| Import dos métodos de requisição |---
 import { getCursos } from "../api/lionSchool.js"
-import { inicializarAlunos } from "./screens/TelaAlunosCurso.js"
+import { inicializarAlunos } from "./screens/telaAlunosCurso.js"
 
 // ---| Funções da Interface |---
 

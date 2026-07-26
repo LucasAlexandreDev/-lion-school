@@ -11,6 +11,7 @@
 // ---| Import dos métodos de requisição |---
 import { getAlunoCurso, getAlunoStatus } from "../../api/lionSchool.js"
 import { inicializarCursos } from "../main.js"
+import { inicializarDadosAluno } from "./telaDadosAluno.js"
 
 // ---| Funções da Interface |---
 
@@ -194,6 +195,13 @@ const criarTelaAlunos = async function (listaAlunos, siglaCurso, idCurso) {
 
                 // Adição da foto + nome do aluno dentro do card
                 cardAluno.append(imgAluno, spanNomeAluno)
+
+                // ---| ADICIONANDO O EVENTO DE CLIQUE PARA A TELA DE DADOS DO ALUNO |---
+                cardAluno.addEventListener('click', () => {
+                    
+                    // Passamos o identificador único do aluno e a sigla do curso
+                    inicializarDadosAluno(itemAluno.id, siglaCurso,)
+                })
 
                 // Adição do cardAluno dentro da div de grade
                 divCardsGrid.append(cardAluno)
