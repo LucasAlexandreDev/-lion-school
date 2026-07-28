@@ -5,18 +5,22 @@
 }
 
 /* Garante que a página ocupe toda a altura da tela e evita scroll horizontal */
-html, body {
-    height: 100vh;
-    width: 100vw;
+html,
+body {
+    min-height: 100vh;
+    width: 100%;
     margin: 0;
-    overflow-x: hidden;
 }
 
 /* Configura o body como Flexbox para empilhar header, main e footer  */
+
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    flex: 1;
 }
 
 .container-header{
@@ -57,10 +61,10 @@ main {
 
 .container-footer{
     background-color: var(--cor-principal);
-    height: 100px; 
+    height: 100px;
     width: 100%;
     display: flex;
-    justify-content: space-around;  
+    justify-content: space-around;
     align-items: center;
     color: var(--cor-texto);
 }
@@ -105,3 +109,80 @@ main {
     height: 40px;
     width: 40px;
 }
+
+@media(max-width: 667px){
+
+    .container-header{
+        height: auto;
+        padding: 15px;
+        justify-content: space-around;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .container-logo{
+        margin-left: 0;
+    }
+
+    .container-logo img{
+        max-width: 120px;
+        height: auto;
+    }
+
+    .container-sair{
+        margin-right: 0;
+        gap: 8px;
+    }
+
+    .container-sair img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .container-sair span{
+        display: none;
+    }
+
+    main{
+        height: auto;
+        min-height: calc(100vh - 220px);
+    }
+
+    .container-footer{
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .container-footer h3{
+        font-size: 14px;
+    }
+
+    .container-icons{
+        align-items: center;
+        gap: 10px;
+    }
+
+    .container-icons p{
+        padding-left: 0;
+    }
+
+    .info{
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .container-redes{
+        justify-content: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    .redes-icon{
+        width: 40px;
+        height: 40px;
+    }
+}
+
