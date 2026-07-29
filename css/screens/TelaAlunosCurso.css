@@ -193,3 +193,63 @@
     overflow: hidden;
 }
 
+@media(max-width: 667px) {
+
+    .container-alunos-geral {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .container-topo-alunos {
+        gap: 16px;
+    }
+
+    .linha-filtro-alunos {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .select-status {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .container-legenda {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .texto-legenda {
+        width: 100%;
+        text-align: center;
+    }
+
+    .titulo-tela-alunos {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .grid-cards-alunos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-height: unset;
+        overflow-y: auto;
+    }
+
+    .card-aluno {
+        height: 210px;
+        padding: 15px 10px;
+    }
+
+    .card-aluno img {
+        width: 90px;
+        height: 90px;
+        border-width: 2px;
+    }
+
+    .card-aluno span {
+        font-size: 12px;
+    }
+}
